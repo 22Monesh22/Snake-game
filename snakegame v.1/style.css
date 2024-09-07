@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f0e68c; /* A soft yellow background */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    color: #0864f9; /* A blue color for the heading */
+    font-size: 2em;
+    margin-top: 1rem;
+}
+
+#msg {
+    margin-bottom: 1rem;
+    color: #1c2a13;
+    font-size: 1.2em;
+}
+
+#container {
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+}
+
+#gameBoard {
+    border: 5px solid #0864f9; /* A blue border to match the heading */
+    background-color: #000; /* Black background for the game area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#score {
+    margin-top: 1em;
+    font-size: 1.5em;
+    color: #0864f9; /* Matching the blue color */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animation for score */
+#scoreVal {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: #ff4500; /* Orange color for the score */
+    animation: pulse 1s infinite;
+}
+
+/* Pulse animation for score */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Tail animation */
+@keyframes snakeTail {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Tail effect on the snake */
+.snake-segment {
+    background-color: #32cd32; /* Lime green color for the snake */
+    box-shadow: 0 0 5px #32cd32, 0 0 10px #32cd32;
+    animation: snakeTail 1s infinite alternate;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    #gameBoard {
+        width: 100%;
+        height: auto;
+    }
+
+    #score {
+        font-size: 1.2em;
+    }
+
+    #scoreVal {
+        font-size: 1.5em;
+    }
+}
+@keyframes tailFade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.snake-part {
+    animation: tailFade 0.5s infinite alternate;
+}
